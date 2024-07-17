@@ -1,5 +1,5 @@
 package com.security.hashing;
-
+//UserRepository.java(database crud operations class)
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

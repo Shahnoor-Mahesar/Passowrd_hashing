@@ -1,5 +1,5 @@
 package com.security.hashing;
-
+//User.java(user schema)
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

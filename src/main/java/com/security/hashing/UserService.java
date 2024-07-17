@@ -1,5 +1,5 @@
 package com.security.hashing;
-
+//UserService.java(Abstraction for the repository to save bottleneck for doing multiple operations in controller)
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

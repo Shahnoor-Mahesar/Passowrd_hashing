@@ -1,5 +1,5 @@
 package com.security.hashing;
-
+//Password.java(Encoder and decoder for password hashing)
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
