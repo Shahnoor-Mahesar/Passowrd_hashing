@@ -22,23 +22,38 @@ public class Controller {
     @PostMapping("/register")
     public User register(@RequestBody User user) {
 
-        return userService.saveUser(user.getUsername(), user.getPassword());
+        try {
+            if(!(user.getUsername().isEmpty() || user.getPassword().isEmpty())) {
+                return userService.saveUser(user.getUsername(), user.getPassword());
+            }
+            return null;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @GetMapping("/users")
     public List<User> getUsers() {
-        return userRepository.findAll();
+        try {
+            return userRepository.findAll();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @PostMapping("/login")
     public String login(@RequestBody User user) {
 
-        if(userService.login(user.getUsername(), user.getPassword())) {
-            return "Welcome " + user.getUsername();
-        }
-        else
-        {
-            return "Invalid username or password";
+        try {
+            if(userService.login(user.getUsername(), user.getPassword())) {
+                return "Welcome " + user.getUsername();
+            }
+            else
+            {
+                return "Invalid username or password";
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
 
     }
